@@ -19,4 +19,9 @@ response = requests.request("GET", url, headers=headers)
 data = response.json()["response"]
 
 for c in data:
-    print(c)
+    country = c['country']
+    cases_new = c['cases']['new']
+    cases_active = c['cases']['active']
+    cases_recovered = c['cases']['recovered']
+
+    print(f'Country: {country} |  New Cases')
